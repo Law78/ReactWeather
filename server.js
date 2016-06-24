@@ -17,7 +17,7 @@ app.use(function(req, res, next){
   // Per far si che funzioni con localhost fai il test se la connessione è https e non http altrimenti non funziona in locale
   if (req.headers['x-forwarded-proto'] === 'https'){
     // la connessione non è http, allora faccio in redirect in http
-    res.redirect(`http://${req.hostname}${req.url}:${PORT}`);
+    res.redirect(`http://${req.hostname}${req.url}`);
   } else {
     // la connessione è http, posso andare avanti con next() al prossimo middleware
     next();
