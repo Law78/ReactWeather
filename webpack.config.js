@@ -1,5 +1,27 @@
+// Webpack Utilities
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/app.jsx',
+  entry: [
+    // Siccome sono regular script e non devono essere necessariamente inpacchettati da webpack, per cui premetto script!
+    'script!jquery/dist/jquery.min.js',
+    'script!foundation-sites/dist/foundation.min.js',
+    './app/app.jsx'
+  ],
+  // Ho un insieme di KeyValueObject in cui la KEY è il nome del modulo e il value è la variabile che verrà messa a disposizione
+  // agli altri moduli, in quanto foundation ha bisogno di jQuery!
+  externals: {
+    jquery: 'jQuery'
+  },
+  plugins: [
+    // ProvidePlugin mi fornisce degli shortcut, scorciatoie. Ad es. se volessi, dai miei moduli, usare $ per jQuery allora
+    // ho bisogno di definire questo shortcut:
+    new webpack.ProvidePlugin({
+      // specifico la variabile che voglio controllare e sostituire col valore specificato
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
   output: {
     path: __dirname,
     filename: './public/js/bundle.js'

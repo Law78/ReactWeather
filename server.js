@@ -3,6 +3,7 @@ var express = require('express');
 
 // Creo la mia App Express, ovvero ho una istanza di Express:
 var app = express();
+// La porta la prendo da process.env.PORT se esiste (necessario per HEROKU)
 const PORT = process.env.PORT || 3000;
 
 /*
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 app.use(function(req, res, next){
   // verifico l'header della richiesta
   // Per far si che funzioni con localhost fai il test se la connessione è https e non http altrimenti non funziona in locale
+  // Questo perchè in localhost non ho l'x-forwarded-proto e quindi lo tratterei come fosse una comunicazione https
   if (req.headers['x-forwarded-proto'] === 'https'){
     // la connessione non è http, allora faccio in redirect in http
     res.redirect(`http://${req.hostname}${req.url}`);
