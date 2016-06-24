@@ -26,7 +26,7 @@ app.use(function(req, res, next){
 
 // Indichiamo la cartella che pubblichiamo. Con app.use aggiungo funzionalità alla mia App Express.
 // con express.static indico una cartella, in questo caso public:
-app.use(express.static('Public'));
+app.use(express.static('public'));
 
 // Avvio il server:
 app.listen(PORT, function(){
