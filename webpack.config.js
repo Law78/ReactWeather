@@ -40,7 +40,7 @@ module.exports = {
       WeatherMessage: 'app/components/WeatherMessage.jsx',
       openWeatherMap: 'app/api/openWeatherMap',
       ErrorModal: 'app/components/ErrorModal.jsx',
-      applicationStyle: 'app/styles/app.css'
+      applicationStyle: 'app/styles/app.scss'
     },
     // In questo modo mi evito di specificare l'estensione nei require ;)
     extensions: ['', '.js', '.jsx']
