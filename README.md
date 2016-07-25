@@ -89,3 +89,15 @@ require('style!css!sass!applicationStyle');
 ```
 
 Then restart webpack!
+
+#Il problema del modale di Foundation.
+
+React è allergico a librerie esterne che alterano il DOM. Foundation è un esempio.
+Quando vado in errore, appare il pannello modale di Foundation. Dopodichè Quando
+successivamente provo a cercare una nuova città, senza generare un ulteriore
+errore di città non valida, ho un errore di React in quanto ho una modifica del
+DOM di Foundation.
+Quello che andiamo a fare, per fixare il problema, è creare, nel componentDidMount
+una stringa che rappresenta il markup del mio modale. Utilizzando il selettore
+jQuery per creare il nostro elemento HTML.
+Ho bisogno però sia di react-dom che di react-dom/server.
