@@ -1,4 +1,4 @@
-var React = require('react');
+const React = require('react');
 
 /*var About = React.createClass({
   render: function(){
@@ -11,7 +11,7 @@ var React = require('react');
   }
 });*/
 
-var About = () => {
+const About = () => {
   return(
 
     <div >

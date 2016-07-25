@@ -19,14 +19,14 @@ module.exports = {
     return axios.get(requestUrl).then(function(response){
       //debugger;
       if(response.data.cod && response.data.message){
-        console.log('res err: ', response.data.message);
+        //console.log('res err: ', response.data.message);
         throw new Error(response.data.message);
       } else {
-        console.log('res: ',response.data.main.temp);
+        //console.log('res: ',response.data.main.temp);
         return response.data.main.temp;
       }
     }, function(error){
-      console.log('errore: ', error);
+      //console.log('errore: ', error);
       throw new Error(error.data.message);
     });
   }

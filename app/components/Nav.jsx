@@ -11,6 +11,9 @@ var Nav = React.createClass({
     return(
       <div className="top-bar">
         <div className="top-bar-left">
+
+
+
           <ul className="menu">
             <li className="menu-text">React Weather App</li>
             <li>
@@ -43,3 +46,18 @@ var Nav = React.createClass({
 });
 
 module.exports = Nav;
+
+/*
+<ul className="dropdown menu" data-dropdown-menu="">
+  <li>
+   <a href="#">One</a>
+   <ul className="menu vertical">
+     <li><a href="#">One</a></li>
+     <li><a href="#">Two</a></li>
+     <li><a href="#">Three</a></li>
+   </ul>
+  </li>
+  <li><a href="#">Two</a></li>
+  <li><a href="#">Three</a></li>
+</ul>
+*/
