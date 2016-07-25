@@ -95,3 +95,58 @@ addPromise(1, 12).then(function(result){
 }, function(err){
   console.log('errre', err);
 });
+
+// Esempio di Andrew:
+
+function getTempCallback(location, callback){
+
+}
+/*
+Passo la location e la callback:
+
+getTempCallback('Rome', function(){});
+
+La funzione di callback prende due parametri: uno di errore e uno che rappresenta la
+temperatura:
+
+getTempCallback('Rome', function(err, temp))
+
+a questo punto, all'interno della mia getTempCallback posso avere due casi:
+
+function getTempCallback(location, callback){
+  callback(undefined, 78); // Non ho l'errore e ho solo la temperatura
+  callback('City not found'); // Ho solo l'errore
+}
+
+pertanto la mia funzione di callback sarà:
+getTempCallback('Rome', function(){
+  if(err){
+    console.log('error', err);
+  } else {
+    console.log('success', temp);
+  }
+});
+
+In questo modo però ho una funzione di callback che è responsabile di gestire
+entrambi i casi.
+*/
+
+
+function addOperationPromise(a ,b){
+  return new Promise( function(resolve, reject){
+  	setTimeout(function(){
+	    if(typeof a === 'number' && typeof b === 'number'){
+	      return resolve(a + b);
+	    } else {
+	      reject('Inserisci un numero');
+	    }  		
+  	}, 2000);
+
+  });
+}
+
+addOperationPromise("b",4).then(function(data){
+	console.log(data);
+}, function(err){
+	console.log(err);
+});
