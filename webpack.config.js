@@ -6,10 +6,7 @@ module.exports = {
     // Siccome sono regular script e non devono essere necessariamente inpacchettati da webpack, per cui premetto script!
     'script!jquery/dist/jquery.min.js',
     'script!foundation-sites/dist/foundation.min.js',
-    './app/app.jsx',
-    'script!foundation-sites/js/foundation.dropdownMenu.js',
-    'script!foundation-sites/js/foundation.dropdown.js',
-    'script!foundation-sites/js/foundation.drilldown.js'
+    './app/app.jsx'
   ],
   // Ho un insieme di KeyValueObject in cui la KEY è il nome del modulo e il value è la variabile che verrà messa a disposizione
   // agli altri moduli, in quanto foundation ha bisogno di jQuery!
@@ -42,7 +39,8 @@ module.exports = {
       WeatherForm: 'app/components/WeatherForm.jsx',
       WeatherMessage: 'app/components/WeatherMessage.jsx',
       openWeatherMap: 'app/api/openWeatherMap',
-      ErrorModal: 'app/components/ErrorModal.jsx'
+      ErrorModal: 'app/components/ErrorModal.jsx',
+      applicationStyle: 'app/styles/app.css'
     },
     // In questo modo mi evito di specificare l'estensione nei require ;)
     extensions: ['', '.js', '.jsx']

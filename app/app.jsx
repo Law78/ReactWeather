@@ -9,8 +9,12 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
+// Carico Foundation
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
+
+// App css
+require('style!css!applicationStyle');
 
 ReactDOM.render(
   <Router history={hashHistory}>

@@ -15,7 +15,7 @@ const About = () => {
   return(
 
     <div >
-      <h3 className="text-center">About</h3>
+      <h1 className="text-center page-title">About</h1>
       <p>Questa è una applicazione per prelevare il meteo da openweather, costruita con React.</p>
       <p>
         Qui alcuni degli strumenti che ho utilizzato:
