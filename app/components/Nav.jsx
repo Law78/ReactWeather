@@ -5,7 +5,12 @@ var Nav = React.createClass({
 
   onSearch: function(e) {
     e.preventDefault(); // Evito il refresh del browser al click sul submit
-    alert('Not yet implemented');
+    var location = this.refs.search.value;
+    var encodedLocation = encodeURIComponent(location);
+    if(location && typeof location==='string'){
+      this.refs.search.value = '';
+      window.location.hash = `#/?location=${encodedLocation}`;
+    }
   },
   render: function() {
     return(
@@ -31,7 +36,7 @@ var Nav = React.createClass({
           <form onSubmit={this.onSearch}>
             <ul className="menu">
               <li>
-                <input type="search" placeholder="Ricerca il tempo..." />
+                <input type="search" ref="search" placeholder="Ricerca il tempo..." />
               </li>
               <li>
                 <input type="submit" className="button" value="Visualizza Tempo"/>
