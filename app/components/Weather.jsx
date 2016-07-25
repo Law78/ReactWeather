@@ -34,21 +34,19 @@ var Weather = React.createClass({
       //alert(errorMessage);
     });
   },
-  componentDidMount: function(){
-    var location = this.props.location.query.location;
+  updatedLocation: function(location){
+    var location = location;
     if(location && typeof location === 'string'){
       this.handleSearch(location);
       // Faccio il reset della query string:
       window.location.hash = '#/';
     }
   },
+  componentDidMount: function(){
+    this.updatedLocation(this.props.location.query.location);
+  },
   componentWillReceiveProps: function(newProps){
-    var location = newProps.location.query.location;
-    if(location && typeof location === 'string'){
-      this.handleSearch(location);
-      // Faccio il reset della query string:
-      window.location.hash = '#/';
-    }
+    this.updatedLocation(newProps.location.query.location);
   },
   render: function(){
     var {isLoading, temp, location, errorMessage} = this.state;
